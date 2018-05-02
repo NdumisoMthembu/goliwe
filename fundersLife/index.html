@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html ng-app="App">
+
+
+<head>
+    <title>Funders Life </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/icon.PNG" />
+    <meta charset="utf-8">
+
+    <link href="css/team.css" rel="stylesheet" />
+    <link href="css/single.css" rel="stylesheet" />
+    <link href="css/services.css" rel="stylesheet" />
+    <link href="css/mail.css" rel="stylesheet" />
+    <link href="css/font-awesome.css" rel="stylesheet" />
+    <link href="css/elements.css" rel="stylesheet" />
+    <link href="css/contact.css" rel="stylesheet" />
+    <link href="css/client-dash-items.css" rel="stylesheet" />
+    <link href="css/chat.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+
+    <script src="scripts/core/jquery-2.2.3.min.js"></script>
+    <script src="scripts/core/bootstrap-3.1.1.min.js"></script>
+    <script src="scripts/core/responsiveslides.min.js"></script>
+    <!--angularjs-->
+    <script src="scripts/core/angular/angular.min.js"></script>
+    <script src="scripts/core/angular/angular-route.js"></script>
+    <script src="scripts/core/angular/config.js"></script>
+    <script src="scripts/core/angular/app.js"></script>
+    <script src="scripts/core/angular/routes.js"></script>
+
+    <!--Home-->
+    <script src="components/common/commonCtrl.js"></script>
+    <script src="components/HomeCtrl.js"></script>
+    <script src="components/login/LoginCtrl.js"></script>
+    <script src="components/user-dashboard/dashboardCtrl.js"></script>
+    <script src="components/create-dream/createdreamCtrl.js"></script>
+    <script src="components/my-referrals/referralsCtrl.js"></script>
+    <script src="components/bonus/bonusCtrl.js"></script>
+    <script src="components/profile/profileCtrl.js"></script>
+    <script src="components/Logout/logoutCtrl.js"></script>
+    <script src="components/dream-details/dreamDetailsCtrl.js"></script>
+    <script src="components/proof-of-payment/proofOfPaymentCtrl.js"></script>
+    <script src="components/Admin-dashboard/adminDashCtrl.js"></script>
+    <script src="components/awaiting-allocation/awaitingallocationCtrl.js"></script>
+    <script src="components/allocate/allocateCtrl.js"></script>
+    <script src="components/Create-Allocation/createAllocationCtrl.js"></script>
+    <script src="components/Paid-dreams/paidDreamsCtrl.js"></script>
+    <script src="components/active-dreams/activeCtrl.js"></script>
+    <script src="components/active-dream-details/activedreamdetailsCtrl.js"></script>
+    <script src="components/allocated-dreams/allocatedCtrl.js"></script>
+    <script src="components/user-list/usersCtrl.js"></script>
+    <script src="components/Keepers/keeperCtrl.js"></script>
+    <script src="components/Allocate-Kept-Funds-To-Dreamer/AllocateKeptFundsToDreamerCtrl.js"></script>
+    <script src="components/Allocate-Funds-To-Keep/AllocateFundsToKeepCtrl.js"></script>
+    <script src="components/sub.create-acount/join-us/joinCtrl.js"></script>
+    <script src="components/sub.create-acount/Personal-Information/PersonalInformationCtrl.js"></script>
+    <script src="components/sub.create-acount/Banking-Details/BankingDetailsCtrl.js"></script>
+    <script src="components/Verify-Email/VerifyEmailCtrl.js"></script>
+    <script src="components/userChat/chatCtrl.js"></script>
+    <script src="components/userChat/adminChatsCtrl.js"></script>
+    <script src="components/My-Withdraws/myWithdrawalsCtrl.js"></script>
+    <script src="components/widrawals-list/WithdrawalsListCtrl.js"></script>
+</head>
+<body>
+    <!--  <div ng-include="'myFile.htm'"></div>-->
+    <div ng-controller="commonCtrl"></div>
+    <ng-view></ng-view>
+
+    <!--footer -->
+    <div class="footer">
+
+
+        <div class="copyright">
+            <div class="container">
+                <div class="copyrighttop">
+                    <ul>
+                        <li>
+                            <h4>Follow us on:</h4>
+                        </li>
+                        <li><a class="facebook" href="https://www.facebook.com/WorldWideCash" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+
+                    </ul>
+                </div>
+                <div class="copyrightbottom">
+                    <p>© 2018  Funders Life. All Rights Reserved</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- //copyright -->
+        <!-- js -->
+        <!-- //js -->
+        <!--search-bar-->
+        <script src="scripts/core/main.js"></script>
+        <!--//search-bar-->
+        <script>
+            $('ul.dropdown-menu li').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+            });
+        </script>
+
+
+       
+        <!-- start-smoth-scrolling -->
+
+        <script src="scripts/core/move-top.js"></script>
+        <script src="scripts/core/easing.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 900);
+                });
+            });
+        </script>
+        <!-- start-smoth-scrolling -->
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /*
+                                        var defaults = {
+                                                containerID: 'toTop', // fading element id
+                                            containerHoverID: 'toTopHover', // fading element hover id
+                                            scrollSpeed: 1200,
+                                            easingType: 'linear'
+                                            };
+                                        */
+
+                $().UItoTop({
+                    easingType: 'easeOutQuart'
+                });
+
+            });
+        </script>
+        <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+        </div>
+</body>
+
+</html>
+

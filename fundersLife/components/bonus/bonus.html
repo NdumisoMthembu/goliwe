@@ -1,0 +1,39 @@
+﻿<div ng-include="'components/common/nav2.html'"></div>
+<div class="banner_bottom" style="padding:0">
+    <div class="container mainmenu">
+
+        <div class="col-sm-9 ">
+
+            <div class="panel panel-default" ng-init="GetBonus()">
+                <div class="panel-heading">
+                    <h3 style="width:100%; text-align:center; padding:2%; color:green; text-transform:capitalize">My-Bonuses R {{bonus}}</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="search" ng-show="showBonus">
+                    </div>
+                    <h3 class="wait">{{wait}}</h3>
+                    <div ng-repeat="bonus in bonuses | filter:search" class="panel panel-default" style="margin:2%; padding:1%">
+
+                        <!-- client-->
+
+                        <div class="panel-heading" style="background:#3498db; color:#ecf0f1; text-align:center">
+                            <b>{{ bonus.nameFrom }} | R {{ bonus.amount }}</b>
+                        </div>
+                        <div class="row">
+
+
+                        </div>
+                    </div>
+                    <button type="button" style="float:right; margin-right:3%;" class="btn btn-success" ng-show="showBonus" ng-click="CashOut()">Cash Out</button>
+                    <br>
+                    <h3 style="color:red">{{error}}</h3>
+                    <h3 style="color:green">{{msg}}</h3>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

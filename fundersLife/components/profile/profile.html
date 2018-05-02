@@ -1,0 +1,98 @@
+﻿<div ng-include="'components/common/nav2.html'"></div>
+
+<div class="banner_bottom" style="padding:0">
+    <div class="container mainmenu">
+
+        <div class="col-sm-9 ">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 style="width:100%; text-align:center; padding:2%; color:green">My Profile</h2>
+                </div>
+                <div class="panel-body">
+
+
+                    <div>
+                        <div class="tittle_head">
+                            <h3 class="tittle">Banking-Details</h3>
+                        </div>
+                        <div class="inner_sec_info_wthree_agile">
+                            <div class="form">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label>Bank Name</label><br>
+                                        <select ng-model="bankname" class="myInput" ng-options="bank for bank in banks"></select><br><br>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label>Account Type</label><br>
+                                        <select ng-model="accountType" class="myInput" ng-options="acctype for acctype in accountTypes"></select><br><br>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label>Branch Name/Code</label><br>
+                                        <input type="text" ng-model="branch" class="myInput"><br><br>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label>Account Number</label><br>
+                                        <input type="number" class="myInput" ng-model="accountnumber" /><br><br>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <label>Are a keeper?</label><br>
+                                        <select ng-model="isAkeeper" class="myInput" ng-options="keeper for keeper in keeperLS"></select><br><br>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <label></label><br>
+                                        <input type="button" value="UPDATE" class="myInput" ng-click="Save()" style="background:#2ecc71; color:white; border: none; padding-top:2%;" />
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <label></label><br>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="tittle_head">
+                            <h3 class="tittle">More about you</h3>
+                        </div>
+                        <div class="inner_sec_info_wthree_agile">
+                            <div class="form">
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label>Id Number</label><br>
+                                        <input type="number" class="myInput" ng-model="id" ng-disabled="true" /><br><br>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label>Cellphone Number</label><br>
+                                        <input type="number" class="myInput" ng-model="cell" ng-disabled="true" /><br><br>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label>Address Line</label><br>
+                                        <textarea class="myInput" ng-model="address" ng-disabled="true"></textarea><br><br>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label>City</label><br>
+                                        <input type="text" class="myInput" ng-model="city" ng-disabled="true" /><br><br>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label>Select Country</label><br>
+                                        <select ng-model="country" class="myInput" ng-options="country for country in countries" ng-disabled="true"></select><br><br>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //stats -->

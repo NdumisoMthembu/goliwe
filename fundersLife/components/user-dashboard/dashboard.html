@@ -1,0 +1,182 @@
+﻿<div class="lock">
+    <h1>
+        User Locked! <br>
+        <a href="#!/logout"><span class="glyphicon glyphicon-off"></span> Logout</a> <br>
+    </h1>
+</div>
+<div ng-include="'components/common/nav2.html'"></div>
+<div class="banner_bottom" style="padding:0">
+    <div class="container mainmenu" style="position:relative" ng-init="RefreshUser()">
+
+        <div class="col-sm-3 sidemenu" style="height:auto">
+
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h1 class="usericon">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </h1>
+                    <h1 class="username">
+                        Hello {{name}}<br>
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">My Link</button>
+                        <a href="#!/My-Profile"> <button type="button" class="btn btn-info">My Profile</button></a>
+
+                    </h1>
+
+                    <div class="container">
+                        <!-- Trigger the modal with a button -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">My Link</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Share this link and get bonuses!</p>
+                                        <p><b><font color=green>{{mylink}}</font></b></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+
+                <li class="list-group-item"><a href="#!/My-Referrals"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user"></span> My-Referrals <span class="badge">{{ myrefferals }}</span></a></li>
+                <li class="list-group-item"><a href="#!/My-Bonuses"><span class="glyphicon glyphicon-credit-card"></span> Bonuses <span class="badge"> R {{ bonus }}</span></a></li>
+                <li class="list-group-item"><a href="#!/My-Withdraws"><span class="glyphicon glyphicon-credit-card"></span> My Withdrawals <span class="badge">  {{ myWithdrawals }}</span></a></li>
+                <!--  <li class="list-group-item"><a href="Amount-You-Can-Keep"><span class="glyphicon glyphicon-apple"></span> Amount you can keep <span class="badge"> R {{ keepableAmount }}</span></a></li>    -->
+                <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-apple"></span></ Amount kept <span class="badge"> R {{ amountkept }}</span></a></li>
+                <li ng-show="showDonateLink" class="list-group-item"><a href="#!/Create-Dream"><span class="glyphicon glyphicon-heart-empty"></span> Create dream</a></li>
+                <li class="list-group-item"><a href="#!/Dashboard"><span class="glyphicon glyphicon-th"></span> Dashboard</a></li>
+                <!--  <li class="list-group-item"><a href=""><span class="glyphicon glyphicon-th-list"></span> History</a></li> -->
+                <li class="list-group-item"><a href="#!/logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+            </ul>
+            <div class="chats" ng-controller="chatCtrl">
+
+
+
+
+
+                <button data-toggle="collapse" data-target="#demo" class="btn btn-success"> <span class="glyphicon glyphicon-send" aria-hidden="true"></span> Live Support </button> <br>
+                <div id="demo" class="collapse">
+                    <ul class="list-group">
+                        <div class="scrollable">
+                            <p>
+                        <li class="list-group-item" ng-repeat="chat in chats">
+                            <div ng-if="chat.senderName == 'Admin'" class="received">
+                                {{chat.message}}
+                                <p class="time" style="color:white">Received: {{chat.timeSent}}</p>
+
+                            </div>
+                            <div ng-if="chat.senderName != 'Admin'" class="sent">
+                                {{chat.message}}
+                                <p class="time">Sent: {{chat.timeSent}}</p>
+
+                            </div>
+                        </li>
+                        </p>
+                </div>
+                <li class="list-group-item">
+                    <textarea class="form-control" id="txtMessageBody" style="height: 40px; border-radius: 15px;" rows="5" ng-model="messageBody"></textarea>
+                </li>
+                <li class="list-group-item">
+                    <button type="button" class="btn btn-info" ng-click="Send()">Send</button>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-9 ">
+
+
+        <div class="panel panel-default" ng-show="ShowNotification">
+            <div class="panel-heading">
+                <h3 style="width:100%; text-align:center; padding:2%; color:green"> Notifications ({{notCount}})</h3>
+            </div>
+            <div class="panel-body" ng-repeat="not in notifications">
+                <div class="alert alert-danger">
+                    <strong>Warning!</strong> {{not.senderName}} Provided help of R{{not.amount}}, If the money reflect on
+                    your bank please confirm, Else please wait until the money reflects <br>
+                    Proof of Payment: <b><a ng-href="{{not.doc}}" target="_blank">View</a> <br>
+                </div>
+                <div class="col-sm-12">
+                    <label></label><br>
+                    <input type="button" value="I RECEIVED THE MONEY" class="myInput" ng-click="ConfirmPayment(not)" style="background:#2ecc71; color:white; border: none; padding-top:2%;" /> <br><br>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default" ng-show="showCompleteYourDetails">
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <div class="alert alert-danger">
+                    <strong>Warning!</strong> Your details are not complete.
+                </div>
+                <div class="col-sm-12">
+                    <label></label><br>
+                    <input type="button" value="COMPLETE YOUR DETAILS" class="myInput" ng-click="Complete()" style="background:#2ecc71; color:white; border: none; padding-top:2%;" /> <br><br>
+                </div>
+            </div>
+        </div>
+        <h4 style="width:100%; text-align:center; color:red;">{{error}}</h4>
+        <h4 style="width:100%; text-align:center; color:green; padding:1%">{{success}}</h4>
+
+
+
+
+
+        <div class="panel panel-default" ng-show="showContent">
+            <div class="panel-heading">
+                <h3 style="width:100%; text-align:center; padding:2%; color:green">My Dreams</h3>
+            </div>
+            <div class="panel-body">
+                <h3 class="wait">{{wait}}</h3>
+                <div class="panel panel-default" style="">
+                    <div class="container" style="width:100%">
+                        <div class="row">
+                            <div class="col-md-4" ng-repeat="investment in investments">
+                                <div ng-class="investment.css">
+                                    <div class="dash-box-icon">
+                                        <i class="glyphicon glyphicon-registration-mark"></i>
+                                    </div>
+                                    <div class="dash-box-body">
+                                        <span class="dash-box-count" style="font-size:18px"># {{investment.id}}</span>
+                                        <span class="dash-box-count" style="font-size:18px">{{investment.dream}}</span>
+                                        <hr>
+                                        <span class="dash-box-count" style="font-size:18px">Invested: R {{investment.amountInvested}}</span>
+                                        <span class="dash-box-title">{{investment.dateInvested}}</span>
+                                        <hr>
+                                        <span class="dash-box-count" style="font-size:18px">On Maturity: R {{investment.expectedAmount}}</span>
+                                        <span class="dash-box-title">{{investment.expecedDate}}</span>
+                                        <hr>
+                                        <span class="dash-box-count" style="font-size:18px">Growth: R {{investment.growth}}</span>
+                                        <hr>
+                                        <span class="dash-box-count" style="font-size:18px">Status: <button type="button" class="btn btn-primary">{{investment.status}}</button></span>
+                                        <hr>
+                                        <span class="dash-box-count" style="font-size:18px">Keepers  <span class="badge"> {{investment.numberOfKeepers}}</span></span>
+                                        <hr>
+                                    </div>
+                                    <div class="dash-box-action">
+                                        <button ng-click="InvestmentDetails(investment)">More Info</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

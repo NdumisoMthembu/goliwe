@@ -1,0 +1,382 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFDC22B4-3AC4-4FFB-8BD8-FF826F0B91F0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>fundersLife</RootNamespace>
+    <AssemblyName>fundersLife</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="api\AddTransiction_Penult.php" />
+    <Content Include="api\AllocateAkeeper.php" />
+    <Content Include="api\AllocateAmountToKeep.php" />
+    <Content Include="api\AllocateKeptAmountToSomeOne.php" />
+    <Content Include="api\CashOutABonus.php" />
+    <Content Include="api\ConfirmPayment.php" />
+    <Content Include="api\conn.php" />
+    <Content Include="api\CreateAllocationForAUser.php" />
+    <Content Include="api\DeleteUser.php" />
+    <Content Include="api\emailClient - Copy.php" />
+    <Content Include="api\emailClient.php" />
+    <Content Include="api\emailClient2.php" />
+    <Content Include="api\emailmakhawiniportal.php" />
+    <Content Include="api\Get.php" />
+    <Content Include="api\GetAdminDashCounts.php" />
+    <Content Include="api\GetAllKeepers.php" />
+    <Content Include="api\GetAllInvestments.php" />
+    <Content Include="api\GetAllNotifications.php" />
+    <Content Include="api\GetAllUserdetails.php" />
+    <Content Include="api\GetBonuses.php" />
+    <Content Include="api\GetChats.php" />
+    <Content Include="api\GetChatsAdmins.php" />
+    <Content Include="api\GetCounts.php" />
+    <Content Include="api\GetInvestmentById.php" />
+    <Content Include="api\GetInvestments.php" />
+    <Content Include="api\GetInvestmentsAdmin.php" />
+    <Content Include="api\GetInvestmentsByStatus.php" />
+    <Content Include="api\GetKeepers.php" />
+    <Content Include="api\GetMessagesOneOnOnes.php" />
+    <Content Include="api\GetNotification.php" />
+    <Content Include="api\GetPendingGH.php" />
+    <Content Include="api\GetReferrals.php" />
+    <Content Include="api\GetSideMenu.php" />
+    <Content Include="api\GetAllWithdrals.php" />
+    <Content Include="api\GetWithdralsForTheUser.php" />
+    <Content Include="api\GetWithdraw.php" />
+    <Content Include="api\GetWithdrawByUserID.php" />
+    <Content Include="api\Invest.php" />
+    <Content Include="api\IsVarificationValid.php" />
+    <Content Include="api\Keeper.php" />
+    <Content Include="api\LockUser.php" />
+    <Content Include="api\Login.php" />
+    <Content Include="api\LoginUser.php" />
+    <Content Include="api\MakeDreamActiveAuto.php" />
+    <Content Include="api\Models\Investements.php" />
+    <Content Include="api\Models\Keeper.php" />
+    <Content Include="api\Models\Person.php" />
+    <Content Include="api\PasswordReset.php" />
+    <Content Include="api\PDO.1.php" />
+    <Content Include="api\PDO.php" />
+    <Content Include="api\Reg.php" />
+    <Content Include="api\resetemail.php" />
+    <Content Include="api\SendChat.php" />
+    <Content Include="api\UnlockUser.php" />
+    <Content Include="api\UpdateBankingInfo.php" />
+    <Content Include="api\UpdateCode.php" />
+    <Content Include="api\UpdateDreamToAllocated.php" />
+    <Content Include="api\UpdateDreamToPaid.php" />
+    <Content Include="api\UpdateKeeperFlag.php" />
+    <Content Include="api\UpdatePendingBalance.php" />
+    <Content Include="api\UpdatePersonalInfo.php" />
+    <Content Include="api\UpdatePOP.php" />
+    <Content Include="api\UpdateProofOfPaymentForAkeeper.php" />
+    <Content Include="api\UpdateVerificationCode.php" />
+    <Content Include="api\upload.php" />
+    <Content Include="api\uploads\15230896188cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\15230896268acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15231115166fe747f7-017b-44cc-b710-e2467fca4550.jpg" />
+    <Content Include="api\uploads\15231115246fe747f7-017b-44cc-b710-e2467fca4550.jpg" />
+    <Content Include="api\uploads\152311162564d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311166464d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311167764d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311171264d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311179264d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311182264d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311230964d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\15231124198cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\15231192288acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15231194608cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\15231196588acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15231196608acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15231196658acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15231197548acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\152311979864d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311980864d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311981364d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311989164d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311993264d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152311996664d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\15231200966fe747f7-017b-44cc-b710-e2467fca4550.jpg" />
+    <Content Include="api\uploads\15231874948acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15232507308acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15232510768acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\1523274271302.jpg" />
+    <Content Include="api\uploads\15233513048acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15233514958acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15233527088acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15233546828acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\152335965764d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\15233860121.jpg" />
+    <Content Include="api\uploads\15233863448acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15233864248acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15233865518acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15233865648acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15233866718acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15237179808cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\15237882058acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15237883798cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\15237948008acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15237952438acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\15238640478acd13c7cd9d0017942b2aba3ad37ae6.jpg" />
+    <Content Include="api\uploads\152386584964d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152386835664d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152415523664d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\15241552718cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\15241552758cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\152415574564d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\152415600764d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\uploads\15241563608cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\15241564438cf98604-73e6-4f01-8bf8-5d2d1833a51e.jpeg" />
+    <Content Include="api\uploads\152415647864d1efe9-cf8b-4bb9-af45-18f1387c2483.jpeg" />
+    <Content Include="api\Verify.php" />
+    <Content Include="api\VerifyEmail.php" />
+    <Content Include="api\VerifyPayMentAdmin.php" />
+    <Content Include="api\Withdraw.php" />
+    <Content Include="api\Withdraw_Tokeep.php" />
+    <Content Include="components\active-dreams\active.html" />
+    <Content Include="components\active-dreams\activeCtrl.js" />
+    <Content Include="components\Admin-dashboard\Admin-dashboard.html" />
+    <Content Include="components\Admin-dashboard\adminDashCtrl.js" />
+    <Content Include="components\active-dream-details\active-dream-details.html" />
+    <Content Include="components\active-dream-details\activedreamdetailsCtrl.js" />
+    <Content Include="components\Allocate-Funds-To-Keep\AllocateFundsToKeepCtrl.js" />
+    <Content Include="components\Allocate-Funds-To-Keep\Keepers.html" />
+    <Content Include="components\Allocate-Kept-Funds-To-Dreamer\AllocateKeptFundsToDreamerCtrl.js" />
+    <Content Include="components\Allocate-Kept-Funds-To-Dreamer\Keepers.html" />
+    <Content Include="components\allocated-dreams\allocated-dreams.html" />
+    <Content Include="components\allocated-dreams\allocatedCtrl.js" />
+    <Content Include="components\allocate\allocateCtrl.js" />
+    <Content Include="components\allocate\Allocate.html" />
+    <Content Include="components\awaiting-allocation\awaiting-allocation.css" />
+    <Content Include="components\awaiting-allocation\awaiting-allocation.html" />
+    <Content Include="components\awaiting-allocation\awaitingallocationCtrl.js" />
+    <Content Include="components\bonus\bonus.html" />
+    <Content Include="components\bonus\bonusCtrl.js" />
+    <Content Include="components\common\bonus\bonus.html" />
+    <Content Include="components\common\bonus\bonusCtrl.js" />
+    <Content Include="components\common\bonus\commonCtrl.js" />
+    <Content Include="components\common\commonCtrl.js" />
+    <Content Include="components\common\nav.html" />
+    <Content Include="components\common\nav2.html" />
+    <Content Include="components\common\nav3.html" />
+    <Content Include="components\Create-Allocation\Create-Allocation.html" />
+    <Content Include="components\Create-Allocation\createAllocationCtrl.js" />
+    <Content Include="components\create-dream\createdream.html" />
+    <Content Include="components\create-dream\createdreamCtrl.js" />
+    <Content Include="components\dream-details\details.html" />
+    <Content Include="components\dream-details\dreamDetailsCtrl.js" />
+    <Content Include="components\How-it-works\How-it-works.html" />
+    <Content Include="components\Keepers\keeperCtrl.js" />
+    <Content Include="components\Keepers\Keepers.html" />
+    <Content Include="components\Logout\logout.html" />
+    <Content Include="components\Logout\logoutCtrl.js" />
+    <Content Include="components\my-referrals\referrals.html" />
+    <Content Include="components\my-referrals\referralsCtrl.js" />
+    <Content Include="components\My-Withdraws\myWithdrawalsCtrl.js" />
+    <Content Include="components\My-Withdraws\My-Withdraws.html" />
+    <Content Include="components\Paid-dreams\Paid-dreams.css" />
+    <Content Include="components\Paid-dreams\Paid-dreams.html" />
+    <Content Include="components\Paid-dreams\paidDreamsCtrl.js" />
+    <Content Include="components\profile\profile.html" />
+    <Content Include="components\profile\profileCtrl.js" />
+    <Content Include="components\proof-of-payment\Proof-Of-Payment.html" />
+    <Content Include="components\proof-of-payment\proofOfPaymentCtrl.js" />
+    <Content Include="components\sub.create-acount\Banking-Details\Banking-Details.html" />
+    <Content Include="components\sub.create-acount\Banking-Details\BankingDetailsCtrl.js" />
+    <Content Include="components\sub.create-acount\join-us\join-us.html" />
+    <Content Include="components\sub.create-acount\join-us\joinCtrl.js" />
+    <Content Include="components\sub.create-acount\Personal-Information\Personal-Information.html" />
+    <Content Include="components\sub.create-acount\Personal-Information\PersonalInformationCtrl.js" />
+    <Content Include="components\user-dashboard\dashboard.html" />
+    <Content Include="components\user-dashboard\dashboardCtrl.js" />
+    <Content Include="components\widrawals-list\widrawals-list.html" />
+    <Content Include="components\user-list\users.html" />
+    <Content Include="components\user-list\usersCtrl.js" />
+    <Content Include="components\userChat\admin.messages.html" />
+    <Content Include="components\userChat\adminChatsCtrl.js" />
+    <Content Include="components\userChat\chatCtrl.js" />
+    <Content Include="components\Verify-Email\Verify-Email.html" />
+    <Content Include="components\Verify-Email\VerifyEmailCtrl.js" />
+    <Content Include="components\widrawals-list\WithdrawalsListCtrl.js" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="api\error_log" />
+    <Content Include="api\uploads\1523077335DANCA.pptx" />
+    <Content Include="api\uploads\1523077804AyandaZwane.pdf" />
+    <Content Include="api\uploads\1523077828AyandaZwane.pdf" />
+    <Content Include="api\uploads\1523077949mkhaya.pptx" />
+    <Content Include="api\uploads\1523077973mkhaya.pptx" />
+    <Content Include="api\uploads\1523077993mkhaya.pptx" />
+    <Content Include="api\uploads\1523078120mkhaya.pptx" />
+    <Content Include="api\uploads\1523078440AyandaZwane.pdf" />
+    <Content Include="api\uploads\1523079536New joiner access card.pdf" />
+    <Content Include="api\uploads\1523083095AyandaZwane.pdf" />
+    <Content Include="api\uploads\1523083143AyandaZwane.pdf" />
+    <Content Include="api\uploads\1523083149New joiner access card[936]-V1.pdf" />
+    <Content Include="api\uploads\1523083176AyandaZwane.pdf" />
+    <Content Include="api\uploads\1523083212New joiner access card[936]-V1.pdf" />
+    <Content Include="api\uploads\1523083231New joiner access card[936]-V1.pdf" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="components\HomeCtrl.js" />
+    <Content Include="components\home\home.html" />
+    <Content Include="components\login\login.html" />
+    <Content Include="components\login\LoginCtrl.js" />
+    <Content Include="css\blog.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\chat.css" />
+    <Content Include="css\client-dash-items.css" />
+    <Content Include="css\contact.css" />
+    <Content Include="css\elements.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\mail.css" />
+    <Content Include="css\services.css" />
+    <Content Include="css\single.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\team.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="images\ab.jpg" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\banner2.jpg" />
+    <Content Include="images\banner3.jpg" />
+    <Content Include="images\banner4.jpg" />
+    <Content Include="images\icon.PNG" />
+    <Content Include="images\left1.png" />
+    <Content Include="images\right1.png" />
+    <Content Include="images\table.PNG" />
+    <Content Include="images\top_up.png" />
+    <Content Include="index.html" />
+    <Content Include="scripts\core\angular\angular-route.js" />
+    <Content Include="scripts\core\angular\angular.min.js" />
+    <Content Include="scripts\core\angular\app.js" />
+    <Content Include="scripts\core\angular\config.js" />
+    <Content Include="scripts\core\angular\routes.js" />
+    <Content Include="scripts\core\bootstrap-3.1.1.min.js" />
+    <Content Include="scripts\core\dirPagination.js" />
+    <Content Include="scripts\core\easing.js" />
+    <Content Include="scripts\core\jquery-2.2.3.min.js" />
+    <Content Include="scripts\core\jquery-ui.js" />
+    <Content Include="scripts\core\jquery.countup.js" />
+    <Content Include="scripts\core\jquery.waypoints.min.js" />
+    <Content Include="scripts\core\main.js" />
+    <Content Include="scripts\core\move-top.js" />
+    <Content Include="scripts\core\responsive-nav.js" />
+    <Content Include="scripts\core\responsiveslides.min.js" />
+    <Content Include="scripts\core\wickedpicker.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55116</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55116/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

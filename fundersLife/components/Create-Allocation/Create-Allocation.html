@@ -1,0 +1,85 @@
+﻿<div ng-include="'components/common/nav3.html'"></div>
+<div class="banner_bottom" style="padding:0">
+    <div class="container mainmenu" ng-init="GetUsers()">
+
+        <div class="col-sm-6 mainmenu">
+            <h2 style="width:100%; text-align:center; padding:2%; color:green">1. Select User/ <a href="Get-Started">Create new for this allocation</a></h2>
+
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="search">
+            </div>
+            <h3 class="wait">{{wait}}</h3>
+            <div ng-repeat="user in users | filter:search" class="panel panel-default" style="margin:2%; padding:1%">
+                <div ng-if="user.role == 'Client'" class="client">
+                    <div class="panel-heading" style="background:#3498db; color:#ecf0f1; text-align:center">
+                        <b>{{ user.name }} {{ user.surname }} | {{ user.userstatus }}</b>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Email: <b>{{ user.email }}</b> <br>
+                            Cell: <b>{{ user.cell }}</b> <br>
+                            Address: <b>{{ user.address }}</b> <br>
+                            Country: <b>{{ user.country }}</b> <br>
+                            Id NO.: <b>{{ user.idnum }}</b> <br>
+                        </div>
+                        <div class="col-sm-4">
+                            Bank name: <b>{{ user.bankname }}</b> <br>
+                            Account Type: <b>{{ user.accountType }}</b> <br>
+                            Branch: <b>{{ user.branch }}</b> <br>
+                            Account number: <b>{{ user.accountnumber }}</b> <br>
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
+                            <button type="button" class="btn btn-info" ng-click="Select(user)">Select</button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="col-sm-6 mainmenu">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 style="width:100%; text-align:center; padding:2%; color:green">2. Create Allocation</h2>
+                </div>
+                <div class="panel-body">
+
+
+                    <div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+
+                                Name:	 <b>{{email}} 	</b><br>
+                                Email:	 <b>{{userName}}</b><br>
+                                Cell No: <b>{{cellNo}}	</b><br>
+                                Amount : <b>{{amount}}	</b><br>
+                            </div>
+
+                            <div class="form-group">
+                                <b>Select Amount </b>
+                                <input ng-model="amount" class="myInput" type="number">
+                            </div>
+
+                            <hr />
+                            <div class="form-group">
+                                <input type="button" value="CREATE" class="myInput" ng-click="Withdraw()" style="background:#2ecc71; color:white; border: none; padding-top:2%;" />
+
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

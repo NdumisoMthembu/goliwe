@@ -1,0 +1,50 @@
+﻿<div ng-include="'components/common/nav3.html'"></div>
+<div class="banner_bottom" style="padding:0">
+    <div class="container" ng-init="Init()">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="width:100%; text-align:center; padding:2%; color:green">
+                    Dream details -  <button type="button" class="btn btn-info" ng-click="Back()">Back </button>
+
+                </h4>
+                <div class="keepers">
+                    <h4>Keepers  <span class="badge"> {{numberOfKeepers}}</span></h4><br>
+                    <h4>Total Kept  Amount <span class="badge"> R {{keeperSumAmount}}</span></h4><br>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Keeper Name</th>
+                                <th>Keeper Email</th>
+                                <th>Keeper Cell</th>
+                                <th>Amount</th>
+                                <th>Proof Of Payment</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="keeper in keepersLS">
+                                <td>{{keeper.user.name}} {{keeper.surname}}</td>
+                                <td> {{keeper.user.email}}</td>
+                                <td>{{keeper.user.cell}}</td>
+                                <td><b> R {{keeper.amount}} </b></td>
+                                <td>{{keeper.status}}</td>
+                                <td>
+                                   
+                                    <button type="button" class="btn btn-info">
+                                        <a ng-href="{{keeper.proofOfPayment}}" target="_blank">
+                                            View Proof  of Payment
+                                        </a>
+                                    </button>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+
+</div>

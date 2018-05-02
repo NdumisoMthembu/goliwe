@@ -1,0 +1,39 @@
+﻿<div ng-include="'components/common/nav3.html'"></div>
+<link href="components/awaiting-allocation/awaiting-allocation.css" rel="stylesheet" />
+
+<div class="banner_bottom" style="padding:0">
+    <div class="container" ng-init="GetNotifications()">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="width:100%; text-align:center; padding:2%; color:green">
+                    Paid Dreams
+
+                </h4>
+
+
+                <div class="alert alert-success " ng-repeat="not in nots">
+                    <strong>
+
+                        {{not.senderName}} paid R{{not.amount}} to {{not.toName}}. On {{not.createdate}}
+
+                        <button type="button" class="btn btn-info">
+                            <a ng-href="{{not.doc}}" target="_blank">
+                                View Proof  of Payment
+                            </a>
+                        </button>
+
+
+                        <button type="button" class="btn btn-success" ng-click="Confirm(not)">Verify</button>
+
+
+                    </strong>
+                </div>
+
+
+
+            </div>
+       
+        </div>
+    </div>
+
+    </div>

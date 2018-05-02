@@ -1,0 +1,29 @@
+﻿<div ng-include="'components/common/nav3.html'"></div>
+<link href="components/awaiting-allocation/awaiting-allocation.css" rel="stylesheet" />
+<div ng-init="GetUsers()" class="container">
+    <div class="row">
+        <h1>Active dreams</h1>
+        <!-- Card Projects -->
+        <div class="form-group">
+            <input type="text" class="form-control"  ng-model="search" style="width:95%; margin-left:3%">
+        </div>
+        <div class="col-md-4" ng-repeat="user in users | filter:search">
+            <div class="card">
+
+                <div class="card-content">
+                    <b>#{{user.id}}</b> <br />
+                    <b><span class="glyphicon glyphicon-user"></span> {{user.name}} {{user.surname}} </b><br />
+                    <b> <span class="glyphicon glyphicon-envelope"></span> {{user.email}}</b><br />
+                    <b> <span class="glyphicon glyphicon-phone"></span> {{user.cell}}</b><br />
+
+                    <b>{{user.userstatus}}</b> <br />
+                                               <div class="card-action">
+                                                   <button type="button" class="btn btn-success" ng-click="UnLock(user)">UnLock</button>
+                                                   <button type="button" class="btn btn-danger" ng-click="Lock(user)">Lock</button>
+                                               </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

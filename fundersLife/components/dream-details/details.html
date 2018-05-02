@@ -1,0 +1,84 @@
+﻿<div ng-include="'components/common/nav2.html'"></div>
+<div class="banner_bottom" style="padding:0">
+    <div class="container mainmenu">
+
+        <div class="col-sm-9 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 style="width:100%; text-align:center; padding:2%; color:green; text-transform:capitalize">{{dream.dream}} : R {{dream.amountInvested}}</h3>
+                    <div class="keepers">
+                        <h4>Keepers  <span class="badge"> {{dream.numberOfKeepers}}</span></h4>
+                        <br>
+                        <h4>Total Kept  Amount <span class="badge"> R {{dream.amountKept}}</span></h4>
+                        <br>
+                        <h3 id="timeCountDown"></h3>
+                        <div class="row">
+
+                            <div class="col-md-4" ng-repeat="keeper in dream.keepers.keepers">
+                                <div class="thumbnail">
+
+                                    <div class="alert alert-info">
+                                        <strong>Amount</strong> <br>
+                                        R {{keeper.amount}}
+                                        <hr>
+                                        <strong>Keeper Name</strong> <br>
+                                        {{keeper.user.name}} {{keeper.surname}}
+                                        <hr>
+                                        <strong>Keeper Email</strong> <br>
+                                        {{keeper.user.email}}
+                                        <hr>
+                                        <strong>Keeper Cell</strong> <br>
+                                        {{keeper.user.cell}}
+                                        <hr>
+                                        <strong>Bank Name</strong> <br>
+                                        {{keeper.user.bankname}}
+                                        <hr>
+                                        <strong>Account Type</strong> <br>
+                                        {{keeper.user.accountType}}
+                                        <hr>
+                                        <strong>Branch</strong> <br>
+                                        {{keeper.user.branch}}
+                                        <hr>
+
+                                        <strong>Account Number</strong> <br>
+                                        {{keeper.user.accountnumber}}
+                                        <hr>
+
+                                        <strong>Status</strong> <br>
+                                        {{keeper.status}}
+                                        <hr>
+                                        <div>
+                                            <div ng-if="keeper.status == 'pending'">
+                                                <button type="button" class="btn btn-primary" ng-click="UploadProofOfPayment(keeper)">Upload Proof of Payment</button>
+                                            </div>
+                                            <div ng-if="keeper.status == 'paid'">
+                                                <button type="button" class="btn btn-info">
+                                                    <a ng-href="{{keeper.proofOfPayment}}" target="_blank">
+                                                        View Proof  of Payment
+                                                    </a>
+                                                </button>
+                                            </div>
+                                            <div ng-if="keeper.status == 'confirmed'">
+                                                <button type="button" class="btn btn-success">
+                                                    <a ng-href="{{keeper.proofOfPayment}}" target="_blank">
+                                                        View Proof  of Payment
+                                                    </a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

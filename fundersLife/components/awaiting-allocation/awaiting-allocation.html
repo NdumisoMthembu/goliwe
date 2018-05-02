@@ -1,0 +1,26 @@
+﻿<div ng-include="'components/common/nav3.html'"></div>
+<link href="components/awaiting-allocation/awaiting-allocation.css" rel="stylesheet" />
+<div ng-init="GetInvestments()" class="container">
+    <div class="row">
+        <h1>Awaiting allocation</h1>
+        <!-- Card Projects -->
+
+        <div class="col-md-4" ng-repeat="dream in dreams | filter:search">
+            <div class="card">
+
+                <div class="card-content">
+                    <b>#{{dream.id}}</b>
+                    <b>{{dream.dream}}</b><br />
+                    <b>User: {{dream.name}} | {{dream.email}}</b><br />
+                    <b>R{{dream.amountInvested}}</b> <br />
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    {{dream.dateInvested}}
+
+                    <div class="card-action">
+                        <button type="button" class="btn btn-success" ng-click="Allocate(dream)">Allocate</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

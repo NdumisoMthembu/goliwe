@@ -1,0 +1,2 @@
+﻿app.controller("HomeCtrl", function () {
+})

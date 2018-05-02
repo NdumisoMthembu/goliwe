@@ -1,0 +1,33 @@
+﻿<div ng-include="'components/common/nav3.html'"></div>
+<link href="components/awaiting-allocation/awaiting-allocation.css" rel="stylesheet" />
+<div ng-init="GetAllWithdrals()" class="container">
+    <div class="row">
+        <h1>List of withdrawals</h1>
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="search" style="width:95%; margin-left:3%">
+        </div>
+        <div class="col-md-4" ng-repeat="pending in myWithdrals | filter:search">
+            <div class="card" ng-repeat="amount in pending.withdrawals.withdrawal">
+
+                <div class="card-block">
+                    <div class="card-title">
+                        <h4>{{ amount.notes }} : R{{ amount.amount }}</h4>
+                        <h4  class="fa fa-user"><b>{{amount.user}}</b></h4>
+                        <h4><i class="fa fa-users"></i> Providers  <span class="badge">{{amount.providers.provider.length}}</span></h4>
+                    </div>
+                    <ul class="list-inline" ng-repeat="provider in amount.providers.provider">
+                        <li><i class="fa fa-user"></i> {{provider.user.name}}</li>
+                        <li><i class="fa fa-envelope"></i> {{provider.user.email}}</li>
+                        <li><i class="fa fa-phone"></i> {{provider.user.cell}}</li>
+                        <li><i class="fa fa-wifi"></i>{{provider.status}}</li>
+                        <li><i class="fa fa-registered"></i>R {{provider.amount}}</li>
+
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
